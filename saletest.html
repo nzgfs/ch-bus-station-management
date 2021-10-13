@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>
+        售票员界面
+    </title>
+    <link rel="stylesheet" type="text/css" href="sale.css">
+</head>
+
+<body>
+    <div id='nav'>
+        <div id='userinfo'>
+            <div id='head'>
+                <img src="pic/head.png" width="80px" />
+            </div>
+            <div id='info'>
+                <div id='name'> </div>
+                <div id='identity'></div>
+            </div>
+        </div>
+        <div class='link'>
+            <span id='sale'><a href=sale.php>售票</a><br></span>
+        </div>
+        <div id='choose'>
+            <span id='chosen'>退票<br></span>
+        </div>
+        <div class='link'>
+            <span id='about'>关于</span>
+        </div>
+    </div>
+    <div id='salepage'>
+        <h1 style="color: rgb(29, 29, 29); margin-bottom: 50px;">退票</h1>
+        <br>
+        <button id="search" class="setbutton" onclick="openfilt()"  style="margin-top: 10px; margin-bottom: 50px;">查询</button>
+        <div class="filtsearch" id="mixfilter">
+            <form action="refundsearch.php" name="salesearch" class="filt" method="post">
+                <input type="date" name='filtdate' class="filtdate" min="2021-06-11" value="2021-06-11" style="font-family: Microsoft YaHei;">
+                <div><input type="text" name="name" id="station" placeholder="姓名"></div>
+                <div><input type="text" name="idnumber" id="idnumber" placeholder="身份证号" style="width: 240px;"></div>
+                <input type="submit" name="done" id="done" value="查询" onclick="showinfo()">
+            </form>
+        </div>
+        <script>
+             document.getElementById("mixfilter").style.display = "none";
+
+            function openfilt() {
+                document.getElementById("mixfilter").style.display = "block";
+                document.getElementById("search").style.display = "none";
+            }
+        </script>
+        <!--<div id='form'>
+            <table class="info">
+                <tr>
+                    <th style="border-radius: 19px 0 0 0; ">num</th>
+                    <th>name</th>
+                    <th style="border-radius: 0 19px 0 0;">time</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </table>
+
+        </div>-->
+        <script>
+            document.getElementById('form').style.display="none";
+            function showinfo(){
+                document.getElementById('form').style.display="block";
+            }
+        </script>
+        <br><br><br>
+        <button id="buybutton" class="setbutton" onclick="openbuy()">退票</button>
+
+        <div id="buy">
+            <form action="refundticket.php" name="buyticket" id="buyticket" method="post">
+                <input type='date' name='date' class="filtdate">
+                    
+                <div><input type="text" name="busnum" class="ticketinfo" placeholder="车次"></div>
+                <div><input type="text" name="name" class="ticketinfo" placeholder="姓名"></div>
+                <div><input type="text" name="idnum" class="passinfo" placeholder="身份证号"></div>
+                <div><input type="text" name="phone" class="passinfo" placeholder="手机号"></div>
+                <input type="submit" name="done" id="confirm" value="确认">
+            </form>
+        </div>
+        <script>
+            document.getElementById("buy").style.display = "none";
+
+            function openbuy() {
+                document.getElementById("buy").style.display = "block";
+                document.getElementById("buybutton").style.display = "none";
+            }
+        </script>
+    </div>
+
+
+
+</body>
+
+</html>

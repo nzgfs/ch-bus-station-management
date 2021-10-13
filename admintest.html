@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="admin.css">
+
+    </head>
+    <body>
+        <div class='set' id='addinfo'>
+            <form action='add.php' name='addinfo' class='setinfo' method='post'>
+                <input type='date' name='adddate' class='setdate' min='$today' value='$today' style='font-family: Microsoft YaHei;'>
+                <div><input type='text' name='add1' placeholder='车次' required='required'></div>
+                <div><input type='text' name='add2' placeholder='到站' required='required'></div>
+                <div><input type='time' name='add3' id='timetest' placeholder='发车时间' required='required'></div>
+                <div><input type='text' name='add4' placeholder='车牌号' required='required'></div>
+                <div><input type='text' name='add5' placeholder='票价' required='required'></div>
+                <div><input type='text' name='add6' placeholder='总座位' required='required'></div>
+                <input type='submit' name='done' class='done' value='完成'>
+            </form>
+        </div>
+    </body>
+</html>
